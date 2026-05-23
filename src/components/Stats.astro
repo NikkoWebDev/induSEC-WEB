@@ -7,19 +7,21 @@ const stats = [
 ];
 ---
 
-<section class="stats" id="stats">
-  <div class="container">
-    <div style="text-align:center; margin-bottom: 4rem;">
-      <span class="section-label">Trayectoria</span>
-      <p style="color:var(--text-dim);margin-top:1rem;max-width:600px;margin-inline:auto;">
+<section class="bg-[#050505] py-32 border-t border-[#111]" id="stats">
+  <div class="max-w-[1280px] mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Trayectoria</span>
+      <p class="text-text-dim mt-4 max-w-[600px] mx-auto">
         Más de una década transformando la seguridad y el control de acceso en Bogotá con automatización de alto nivel. Estos números respaldan nuestra experiencia y compromiso con cada cliente.
       </p>
     </div>
-    <div class="stats-grid">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       {stats.map(s => (
-        <div class="stat-item">
-          <div class="stat-value" data-target={s.value} data-suffix={s.suffix}>0<sup>{s.suffix}</sup></div>
-          <div class="stat-label">{s.label}</div>
+        <div>
+          <div class="font-display text-5xl lg:text-6xl font-extrabold leading-none">
+            <span data-target={s.value} data-suffix={s.suffix}>0<sup class="text-accent text-2xl">{s.suffix}</sup></span>
+          </div>
+          <div class="text-text-dim uppercase text-xs tracking-wider mt-4">{s.label}</div>
         </div>
       ))}
     </div>

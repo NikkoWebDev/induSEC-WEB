@@ -2,62 +2,63 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <div class="logo">
+<footer class="bg-black pt-20 pb-0 border-t border-[#111]">
+  <div class="max-w-[1280px] mx-auto px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 mb-12">
+      <div>
+        <div class="flex items-center gap-3">
           <img src="/logo.png" alt="INDUSEC Logo" class="logo__img" width="52" height="52" />
-          <div class="logo__text">
-            <span class="logo__name">INDUSEC</span>
-            <span class="logo__tagline">Automatismos</span>
+          <div>
+            <span class="block font-display text-2xl font-extrabold tracking-wide leading-none text-white">INDUSEC</span>
+            <span class="block text-[0.65rem] tracking-widest text-text-dim uppercase">Automatismos</span>
           </div>
         </div>
-        <p>Soluciones integrales de automatización industrial y residencial con la más alta tecnología.</p>
-        <div class="footer__social">
-          <a href="https://web.facebook.com/automatizmosindusec/" target="_blank" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/indu.sec" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@indusec3" target="_blank" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/573178544089" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:sld.8574@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <p class="text-text-dim text-sm mt-4 max-w-[300px]">Soluciones integrales de automatización industrial y residencial con la más alta tecnología.</p>
+        <div class="flex gap-4 mt-6">
+          <a href="https://web.facebook.com/automatizmosindusec/" target="_blank" class="w-10 h-10 rounded-full bg-glass border border-glass-border flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-accent hover:border-accent hover:-translate-y-0.5" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/indu.sec" target="_blank" class="w-10 h-10 rounded-full bg-glass border border-glass-border flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-accent hover:border-accent hover:-translate-y-0.5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@indusec3" target="_blank" class="w-10 h-10 rounded-full bg-glass border border-glass-border flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-accent hover:border-accent hover:-translate-y-0.5" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/573178544089" target="_blank" class="w-10 h-10 rounded-full bg-glass border border-glass-border flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-accent hover:border-accent hover:-translate-y-0.5" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:sld.8574@gmail.com" class="w-10 h-10 rounded-full bg-glass border border-glass-border flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-accent hover:border-accent hover:-translate-y-0.5" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
 
       <div>
-        <h4 class="footer__heading">Navegación</h4>
-        <div class="footer__links">
-          <a href="/" class="footer__link">Inicio</a>
-          <a href="/productos/" class="footer__link">Productos</a>
-          <a href="/servicios/" class="footer__link">Servicios</a>
-          <a href="/proyectos/" class="footer__link">Proyectos</a>
+        <h4 class="font-display text-lg tracking-wide mb-6 text-white">Navegación</h4>
+        <div class="flex flex-col gap-3">
+          <a href="/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Inicio</a>
+          <a href="/nosotros/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Sobre Nosotros</a>
+          <a href="/productos/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Productos</a>
+          <a href="/servicios/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Servicios</a>
+          <a href="/proyectos/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Proyectos</a>
         </div>
       </div>
 
       <div>
-        <h4 class="footer__heading">Servicios</h4>
-        <div class="footer__links">
-          <a href="/servicios/" class="footer__link">Automatismos</a>
-          <a href="/servicios/" class="footer__link">Control de Acceso</a>
-          <a href="/servicios/" class="footer__link">Barreras</a>
-          <a href="/servicios/" class="footer__link">Mantenimiento</a>
+        <h4 class="font-display text-lg tracking-wide mb-6 text-white">Servicios</h4>
+        <div class="flex flex-col gap-3">
+          <a href="/servicios/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Automatismos</a>
+          <a href="/servicios/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Control de Acceso</a>
+          <a href="/servicios/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Barreras</a>
+          <a href="/servicios/" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent">Mantenimiento</a>
         </div>
       </div>
 
       <div>
-        <h4 class="footer__heading">Contacto</h4>
-        <div class="footer__links">
-          <a href="https://wa.me/573178544089" target="_blank" class="footer__link"><i class="fab fa-whatsapp"></i> 317 854 4089</a>
-          <a href="mailto:sld.8574@gmail.com" class="footer__link"><i class="fas fa-envelope"></i> sld.8574@gmail.com</a>
-          <a href="https://web.facebook.com/automatizmosindusec/" target="_blank" class="footer__link"><i class="fab fa-facebook"></i> InduSEC</a>
-          <a href="https://www.instagram.com/indu.sec" target="_blank" class="footer__link"><i class="fab fa-instagram"></i> @indu.sec</a>
-          <a href="https://www.tiktok.com/@indusec3" target="_blank" class="footer__link"><i class="fab fa-tiktok"></i> @indusec3</a>
+        <h4 class="font-display text-lg tracking-wide mb-6 text-white">Contacto</h4>
+        <div class="flex flex-col gap-3">
+          <a href="https://wa.me/573178544089" target="_blank" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent"><i class="fab fa-whatsapp w-4 text-center mr-2"></i> 317 854 4089</a>
+          <a href="mailto:sld.8574@gmail.com" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent"><i class="fas fa-envelope w-4 text-center mr-2"></i> sld.8574@gmail.com</a>
+          <a href="https://web.facebook.com/automatizmosindusec/" target="_blank" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent"><i class="fab fa-facebook w-4 text-center mr-2"></i> InduSEC</a>
+          <a href="https://www.instagram.com/indu.sec" target="_blank" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent"><i class="fab fa-instagram w-4 text-center mr-2"></i> @indu.sec</a>
+          <a href="https://www.tiktok.com/@indusec3" target="_blank" class="text-text-dim no-underline text-sm transition-colors duration-300 hover:text-accent"><i class="fab fa-tiktok w-4 text-center mr-2"></i> @indusec3</a>
         </div>
       </div>
     </div>
 
-    <div class="footer__bottom">
-      <p class="footer__copy">&copy; {year} Indusec Automatismos. Todos los derechos reservados.</p>
-      <p class="footer__credit">Diseñado por <em>InduSEC</em></p>
+    <div class="pt-8 border-t border-[#111] flex flex-col lg:flex-row justify-between gap-2 text-center lg:text-left">
+      <p class="text-sm text-[#444]">&copy; {year} Indusec Automatismos. Todos los derechos reservados.</p>
+      <p class="text-sm text-[#444]">Diseñado por <em class="text-text-dim not-italic">InduSEC</em></p>
     </div>
   </div>
 </footer>

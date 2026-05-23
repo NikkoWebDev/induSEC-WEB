@@ -7,6 +7,7 @@ const siteTitle = title ? `${title} | InduSEC Automatismos` : 'InduSEC Automatis
 const siteDesc = description || 'INDUSEC Automatismos: automatización industrial y residencial, control de acceso y barreras vehiculares en Bogotá, Colombia.';
 const img = ogImage || '/og-default.jpg';
 const url = canonical || 'https://puertasindusec.com';
+const breadcrumbName = title || 'InduSEC';
 ---
 
 <!doctype html>
@@ -42,6 +43,7 @@ const url = canonical || 'https://puertasindusec.com';
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Sora:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet" />
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" /></noscript>
@@ -56,6 +58,11 @@ const url = canonical || 'https://puertasindusec.com';
       "telephone": "+57-317-854-4089",
       "email": "sld.8574@gmail.com",
       "areaServed": "Bogotá, Colombia",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.7110,
+        "longitude": -74.0721
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "CR 88 I SUR 52 B - 84",
@@ -75,8 +82,16 @@ const url = canonical || 'https://puertasindusec.com';
         "https://wa.me/573178544089"
       ]
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://puertasindusec.com" },
+        { "@type": "ListItem", "position": 2, "name": breadcrumbName, "item": url }
+      ]
+    })} />
   </head>
-  <body>
+  <body class="bg-[#000000] text-[#f5f5f7] font-body overflow-x-hidden leading-normal">
     <slot />
   </body>
 </html>

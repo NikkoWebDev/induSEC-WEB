@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
+import Stats from '../components/Stats.astro';
+---
+
+<BaseLayout
+  title="Sobre Nosotros"
+  description="INDUSEC Automatismos: más de 10 años instalando motores, control de acceso biométrico y barreras vehiculares en Bogotá. Conozca nuestra historia, equipo y marcas."
+  canonical="https://puertasindusec.com/nosotros/"
+>
+  <Header currentPath="/nosotros/" />
+
+  <section class="pt-40 pb-40" id="nosotros">
+    <div class="max-w-[1280px] mx-auto px-8">
+      <ScrollReveal>
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Sobre Nosotros</span>
+          <h1 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Más de una Década<br />Automatizando Colombia</h1>
+          <p class="text-text-dim mt-6 max-w-[700px] mx-auto">
+            En INDUSEC fusionamos la robustez industrial con la simplicidad de uso. Cada proyecto es una pieza de ingeniería única, calibrada para ofrecer fiabilidad absoluta en entornos críticos. Nuestro equipo técnico certificado brinda soporte 24/7 para mantenimiento preventivo y correctivo, asegurando que tus sistemas funcionen sin interrupciones.
+          </p>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <section class="bg-[#020202]" style="padding-top: 0;">
+    <div class="max-w-[1280px] mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <ScrollReveal type="left">
+          <div>
+            <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Trayectoria</span>
+            <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Nuestra Historia</h2>
+            <p class="text-text-dim mt-8">
+              Con más de 10 años de experiencia en automatización industrial y residencial, en INDUSEC trabajamos con marcas líderes como LiftMaster, Shark, Dítec y AccessMatic. Cada proyecto se diseña a la medida de las necesidades del cliente, garantizando equipos de alta calidad, instalación profesional y soporte técnico continuo en Bogotá y toda Colombia.
+            </p>
+            <p class="text-text-dim mt-6">
+              Ofrecemos soluciones para hogares, conjuntos residenciales, parqueaderos públicos y plantas industriales. Nuestros servicios incluyen desde la instalación de motores para puertas batientes y corredizas hasta sistemas avanzados de control biométrico y barreras vehiculares de alta velocidad.
+            </p>
+            <p class="text-text-dim mt-6">
+              Nos especializamos en la instalación de motores para puertas batientes y corredizas, barreras vehiculares profesionales, sistemas de control biométrico y RFID, cercas eléctricas y semaforización inteligente. Cada instalación es realizada por técnicos certificados que garantizan un trabajo limpio, seguro y conforme a las normas eléctricas vigentes en Colombia.
+            </p>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal type="right">
+          <div class="blueprint-canvas">
+            <div class="blueprint-line line-h" style="top: 25%;"></div>
+            <div class="blueprint-line line-h" style="top: 75%;"></div>
+            <div class="blueprint-line line-v" style="left: 25%;"></div>
+            <div class="blueprint-line line-v" style="left: 75%;"></div>
+            <div class="z-[2] text-center">
+              <i class="fas fa-industry text-5xl text-accent opacity-40"></i>
+              <div class="font-mono text-xs text-accent mt-8">
+                [ PROJECT_SCHEMATIC_042 ]
+              </div>
+            </div>
+            <div class="absolute top-[10%] right-[10%] w-[50px] h-[50px] border border-[rgba(41,151,255,0.2)]"></div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20" id="marcas">
+    <div class="max-w-[1280px] mx-auto px-8">
+      <ScrollReveal>
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Alianzas</span>
+          <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Marcas que Trabajamos</h2>
+          <p class="text-text-dim mt-6 max-w-[700px] mx-auto">
+            Seleccionamos cuidadosamente los fabricantes más prestigiosos del mercado global para garantizar la máxima calidad, durabilidad y rendimiento en cada instalación.
+          </p>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal stagger>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-industry"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">LiftMaster</h3>
+            <p class="text-text-dim text-sm">Líder mundial en automatización residencial y comercial. Motores para puertas de garaje, operadores de barreras y sistemas de acceso remoto con tecnología Security+ 2.0.</p>
+          </div>
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-bolt"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">Shark</h3>
+            <p class="text-text-dim text-sm">Motores de alto rendimiento para puertas batientes y corredizas. Reconocidos por su potencia, silencio operativo y facilidad de instalación en proyectos residenciales de alta gama.</p>
+          </div>
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-microchip"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">Dítec</h3>
+            <p class="text-text-dim text-sm">Especialistas en barreras vehiculares profesionales y sistemas de control de acceso. Equipos robustos con apertura ultrarrápida ideales para parkings comerciales e industriales.</p>
+          </div>
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-cog"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">AccessMatic</h3>
+            <p class="text-text-dim text-sm">Motores industriales para cortinas enrollables y puertas de alta frecuencia de uso. Soluciones pesadas diseñadas para entornos fabriles y logísticos con exigencia continua.</p>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <section class="bg-[#020202] py-20" id="cobertura">
+    <div class="max-w-[1280px] mx-auto px-8">
+      <ScrollReveal>
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Cobertura</span>
+          <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Dónde Estamos</h2>
+          <p class="text-text-dim mt-6 max-w-[700px] mx-auto">
+            Trabajamos en toda Bogotá y municipios cercanos, ofreciendo servicio de instalación, mantenimiento preventivo, reparación de emergencia y venta de repuestos originales. Respaldamos cada instalación con garantía de fábrica, servicio técnico especializado y atención personalizada.
+          </p>
+        </div>
+      </ScrollReveal>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-[700px] mx-auto mt-12">
+        <div class="flex gap-4">
+          <i class="fas fa-shield-halved text-accent mt-1"></i>
+          <div>
+            <span class="block font-semibold mb-1 text-white">Mejores Equipos</span>
+            <span class="text-text-dim text-sm">Solo marcas líderes mundiales.</span>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <i class="fas fa-user-gear text-accent mt-1"></i>
+          <div>
+            <span class="block font-semibold mb-1 text-white">Soporte Elite</span>
+            <span class="text-text-dim text-sm">Respuesta técnica inmediata 24/7.</span>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <i class="fas fa-award text-accent mt-1"></i>
+          <div>
+            <span class="block font-semibold mb-1 text-white">Garantía por Escrito</span>
+            <span class="text-text-dim text-sm">Certificación de instalación incluida.</span>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <i class="fas fa-map-pin text-accent mt-1"></i>
+          <div>
+            <span class="block font-semibold mb-1 text-white">Cobertura Nacional</span>
+            <span class="text-text-dim text-sm">Bogotá y toda Colombia.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Stats />
+
+  <section class="py-20" id="ubicacion">
+    <div class="max-w-[1280px] mx-auto px-8">
+      <ScrollReveal>
+        <div class="text-center mb-12">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Ubicación</span>
+          <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Visítanos</h2>
+          <p class="text-text-dim mt-4">CR 88 I SUR 52 B - 84, Bogotá</p>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal>
+        <div class="rounded-[20px] overflow-hidden border border-glass-border max-w-[800px] mx-auto">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15906.121632971066!2d-74.0721!3d4.7110!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwNCcyMC4wIlc!5e0!3m2!1ses!2sco!4v1"
+            width="100%"
+            height="400"
+            style="border:0; display: block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de INDUSEC Automatismos en Bogotá"
+          ></iframe>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal>
+        <div class="text-center mt-16">
+          <p class="text-text-dim mb-6">¿Quieres saber más sobre nosotros o agendar una visita?</p>
+          <a class="inline-flex items-center gap-3 px-8 py-4 rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-accent text-white hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(41,151,255,0.3)]" href="https://wa.me/573178544089" target="_blank">
+            <i class="fab fa-whatsapp"></i> Contáctanos
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <Footer />
+  <script is:inline src="/scripts/main.js"></script>
+</BaseLayout>

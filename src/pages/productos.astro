@@ -5,14 +5,14 @@ import Footer from '../components/Footer.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
 
 const products = [
-  { icon: 'fas fa-door-open', title: 'Motores Batientes', desc: 'Ideal para puertas de dos hojas. Resistencia y ciclos de trabajo intensivo.', tag: 'Automatismos', tagClass: 'tag--blue' },
-  { icon: 'fas fa-road-barrier', title: 'Barreras Vehiculares', desc: 'Control de acceso rápido y seguro para parkings y áreas industriales.', tag: 'Parking', tagClass: 'tag--green' },
-  { icon: 'fas fa-fingerprint', title: 'Control Biométrico', desc: 'Sistemas avanzados de huella dactilar para alta seguridad y registro de personal.', tag: 'Seguridad', tagClass: 'tag--orange' },
-  { icon: 'fas fa-satellite-dish', title: 'Receptoras y Mandos', desc: 'Kits completos de control remoto y receptores de largo alcance y alta fiabilidad.', tag: 'Accesorios', tagClass: 'tag--steel' },
-  { icon: 'fas fa-arrows-alt-h', title: 'Motores Corredizos', desc: 'Potentes motores para portones corredizos pesados, residenciales e industriales.', tag: 'Automatismos', tagClass: 'tag--blue' },
-  { icon: 'fas fa-bolt', title: 'Cercas Eléctricas', desc: 'Sistemas perimetrales de alta tensión para protección de propiedades.', tag: 'Seguridad', tagClass: 'tag--orange' },
-  { icon: 'fas fa-traffic-light', title: 'Semáforos y Balizas', desc: 'Indicadores de tráfico y seguridad para entradas y salidas automáticas.', tag: 'Señalización', tagClass: 'tag--green' },
-  { icon: 'fas fa-id-card', title: 'Sistemas RFID', desc: 'Lectores de tarjetas y tags para gestión eficiente de flotas y personal.', tag: 'Control Acceso', tagClass: 'tag--blue' },
+  { icon: 'fas fa-door-open', title: 'Motores Batientes', desc: 'Ideal para puertas de dos hojas. Resistencia y ciclos de trabajo intensivo.', tag: 'Automatismos', tagClass: 'bg-[rgba(41,151,255,0.2)] text-accent' },
+  { icon: 'fas fa-road-barrier', title: 'Barreras Vehiculares', desc: 'Control de acceso rápido y seguro para parkings y áreas industriales.', tag: 'Parking', tagClass: 'bg-[rgba(16,185,129,0.2)] text-status' },
+  { icon: 'fas fa-fingerprint', title: 'Control Biométrico', desc: 'Sistemas avanzados de huella dactilar para alta seguridad y registro de personal.', tag: 'Seguridad', tagClass: 'bg-[rgba(255,152,0,0.2)] text-[#ff9800]' },
+  { icon: 'fas fa-satellite-dish', title: 'Receptoras y Mandos', desc: 'Kits completos de control remoto y receptores de largo alcance y alta fiabilidad.', tag: 'Accesorios', tagClass: 'bg-[rgba(107,130,160,0.2)] text-text-dim' },
+  { icon: 'fas fa-arrows-alt-h', title: 'Motores Corredizos', desc: 'Potentes motores para portones corredizos pesados, residenciales e industriales.', tag: 'Automatismos', tagClass: 'bg-[rgba(41,151,255,0.2)] text-accent' },
+  { icon: 'fas fa-bolt', title: 'Cercas Eléctricas', desc: 'Sistemas perimetrales de alta tensión para protección de propiedades.', tag: 'Seguridad', tagClass: 'bg-[rgba(255,152,0,0.2)] text-[#ff9800]' },
+  { icon: 'fas fa-traffic-light', title: 'Semáforos y Balizas', desc: 'Indicadores de tráfico y seguridad para entradas y salidas automáticas.', tag: 'Señalización', tagClass: 'bg-[rgba(16,185,129,0.2)] text-status' },
+  { icon: 'fas fa-id-card', title: 'Sistemas RFID', desc: 'Lectores de tarjetas y tags para gestión eficiente de flotas y personal.', tag: 'Control Acceso', tagClass: 'bg-[rgba(41,151,255,0.2)] text-accent' },
 ];
 ---
 
@@ -23,28 +23,30 @@ const products = [
 >
   <Header currentPath="/productos/" />
 
-  <section class="section section--first" id="productos">
-    <div class="container">
+  <section class="pt-40 pb-40" id="productos">
+    <div class="max-w-[1280px] mx-auto px-8">
       <ScrollReveal>
-        <div class="section-header">
-          <span class="section-label">Catálogo</span>
-          <h1 class="section-title">Productos de Automatismo</h1>
-          <p style="color: var(--text-dim); margin-top: 1rem;">Equipos de automatización, control de acceso y seguridad con la mejor tecnología del mercado.</p>
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Catálogo</span>
+          <h1 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Productos de Automatismo</h1>
+          <p class="text-text-dim mt-4">Equipos de automatización, control de acceso y seguridad con la mejor tecnología del mercado.</p>
         </div>
       </ScrollReveal>
 
       <ScrollReveal stagger>
-        <div class="products-grid">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map(p => (
-            <div class="product-card">
-              <div class="product-card__img"><i class={p.icon}></i></div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">{p.title}</h3>
-                <p class="product-card__desc">{p.desc}</p>
+            <div class="group bg-glass border border-glass-border rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-[0_15px_40px_rgba(41,151,255,0.1)]">
+              <div class="aspect-[4/3] bg-gradient-to-br from-[rgba(41,151,255,0.1)] to-[rgba(41,151,255,0.05)] flex items-center justify-center">
+                <i class={`${p.icon} text-5xl text-accent opacity-50 transition-all duration-300 group-hover:opacity-80 group-hover:scale-110`}></i>
               </div>
-              <div class="product-card__footer">
-                <span class={`tag ${p.tagClass}`}>{p.tag}</span>
-                <a href={`https://wa.me/573178544089?text=${encodeURIComponent('Información sobre ' + p.title)}`} target="_blank" class="btn btn--outline btn--sm"><i class="fab fa-whatsapp"></i></a>
+              <div class="p-6">
+                <h3 class="font-display text-xl tracking-wide mb-3 text-white">{p.title}</h3>
+                <p class="text-text-dim text-sm mb-4">{p.desc}</p>
+              </div>
+              <div class="px-6 py-4 border-t border-glass-border flex justify-between items-center">
+                <span class={`font-mono text-[0.7rem] px-3 py-1 rounded-full ${p.tagClass}`}>{p.tag}</span>
+                <a href={`https://wa.me/573178544089?text=${encodeURIComponent('Información sobre ' + p.title)}`} target="_blank" class="inline-flex items-center gap-3 px-5 py-[0.7rem] rounded-pill font-semibold no-underline text-xs transition-all duration-300 bg-transparent border border-glass-border text-white hover:bg-glass hover:border-accent"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
           ))}
@@ -52,9 +54,9 @@ const products = [
       </ScrollReveal>
 
       <ScrollReveal>
-        <div class="text-center mt-60 cta-servicios">
-          <p style="color: var(--text-dim); margin-bottom: 1rem;">¿No encuentras lo que buscas?</p>
-          <a href="https://wa.me/573178544089?text=Hola,%20me%20interesa%20cotizar%20un%20producto%20específico." target="_blank" class="btn btn--primary">
+        <div class="text-center mt-16">
+          <p class="text-text-dim mb-4">¿No encuentras lo que buscas?</p>
+          <a href="https://wa.me/573178544089?text=Hola,%20me%20interesa%20cotizar%20un%20producto%20específico." target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-accent text-white hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(41,151,255,0.3)]">
             <i class="fab fa-whatsapp"></i> Cotizar Producto
           </a>
         </div>

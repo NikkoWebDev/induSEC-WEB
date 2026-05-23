@@ -61,30 +61,30 @@ const services = [
   </script>
 
   <!-- Services Section -->
-  <section class="section" id="servicios">
-    <div class="container">
+  <section class="py-40" id="servicios">
+    <div class="max-w-[1280px] mx-auto px-8">
       <ScrollReveal>
-        <div class="section-header">
-          <span class="section-label">Engineering Modules</span>
-          <h2 class="section-title">Servicios de Vanguardia</h2>
-          <p style="color: var(--text-dim); margin-top: 1.5rem; max-width: 700px; margin-inline: auto;">
-            Con más de 10 años de experiencia en automatización industrial y residencial, en INDUSEC trabajamos con marcas líderes como LiftMaster, Shark, Dítec y AccessMatic. Cada proyecto se diseña a la medida de las necesidades del cliente, garantizando equipos de alta calidad, instalación profesional y soporte técnico continuo en Bogotá y toda Colombia. Ofrecemos soluciones para hogares, conjuntos residenciales, parqueaderos públicos y plantas industriales que requieren automatización de accesos con la máxima seguridad y durabilidad. Nuestros servicios incluyen desde la instalación de motores para puertas batientes y corredizas hasta sistemas avanzados de control biométrico y barreras vehiculares de alta velocidad para parkings comerciales e industriales.
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Engineering Modules</span>
+          <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Servicios de Vanguardia</h2>
+          <p class="text-text-dim mt-6 max-w-[700px] mx-auto">
+            Ofrecemos instalación profesional de motores para puertas batientes, corredizas, barreras vehiculares de alta velocidad y sistemas de control biométrico. Cada proyecto se diseña a la medida del cliente con equipos de marcas líderes mundiales y soporte técnico continuo.
           </p>
         </div>
       </ScrollReveal>
       <ScrollReveal stagger>
-        <div class="services-grid">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map(s => (
-            <div class="service-card" data-reveal>
-              <div class="service-card__icon"><i class={s.icon}></i></div>
-              <h3 class="service-card__title">{s.title}</h3>
-              <p class="service-card__desc">{s.desc}</p>
+            <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500 cursor-pointer hover:border-[rgba(41,151,255,0.3)] hover:-translate-y-1">
+              <div class="text-4xl text-accent mb-8"><i class={s.icon}></i></div>
+              <h3 class="font-display text-2xl tracking-wide mb-6 text-white">{s.title}</h3>
+              <p class="text-text-dim text-sm mb-6">{s.desc}</p>
               <div class="service-card__extra">
                 {s.specs.map(sp => (
-                  <div class="tech-spec"><span>{sp.label}</span><span>{sp.value}</span></div>
+                  <div class="flex justify-between font-mono text-xs text-status mb-2"><span>{sp.label}</span><span>{sp.value}</span></div>
                 ))}
               </div>
-              <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" style="font-size:0.7rem;color:var(--accent);margin-top:1rem;display:inline-block;text-decoration:none;">
+              <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" class="text-[0.7rem] text-accent mt-4 inline-block no-underline">
                 {s.cotizaLabel} <i class="fab fa-whatsapp"></i>
               </a>
             </div>
@@ -94,94 +94,51 @@ const services = [
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="section" id="empresa" style="background: #020202;">
-    <div class="container">
-      <div class="about-grid">
-        <ScrollReveal type="left">
-          <div class="about-text">
-            <span class="section-label">Core Identity</span>
-            <h2 class="section-title">Diseñado para la<br />Excelencia</h2>
-            <p style="color: var(--text-dim); margin-top: 2rem;">
-              En INDUSEC, fusionamos la robustez industrial con la simplicidad de uso. Cada proyecto es
-              una pieza de ingeniería única, calibrada para ofrecer fiabilidad absoluta en entornos críticos.
-              Nuestro equipo técnico certificado brinda soporte 24/7 para mantenimiento preventivo y correctivo,
-              asegurando que tus sistemas de automatización, control de acceso y barreras vehiculares funcionen
-              sin interrupciones en hogares, conjuntos residenciales y empresas industriales en Bogotá.
-            </p>
-            <p style="color: var(--text-dim); margin-top: 1.5rem;">
-              Nos especializamos en la instalación de motores para puertas batientes y corredizas, barreras vehiculares profesionales,
-              sistemas de control biométrico y RFID, cercas eléctricas y semaforización inteligente. Cada instalación es realizada por
-              técnicos certificados que garantizan un trabajo limpio, seguro y conforme a las normas eléctricas vigentes en Colombia.
-              Además, ofrecemos asesoría técnica gratuita para ayudarte a elegir la solución más adecuada para tu proyecto,
-              ya sea residencial, comercial o industrial. Todos nuestros trabajos incluyen certificación de instalación,
-              manuales de usuario y garantía por escrito, brindándote total tranquilidad y respaldo profesional.
-            </p>
-            <div class="about__feat-list">
-              <div class="feat-item">
-                <i class="fas fa-shield-halved"></i>
-                <div>
-                  <span class="feat-title">Mejores Equipos</span>
-                  <span class="feat-desc">Solo marcas líderes mundiales.</span>
-                </div>
-              </div>
-              <div class="feat-item">
-                <i class="fas fa-user-gear"></i>
-                <div>
-                  <span class="feat-title">Soporte Elite</span>
-                  <span class="feat-desc">Respuesta técnica inmediata 24/7.</span>
-                </div>
-              </div>
-            </div>
-            <a class="btn btn--outline" href="/proyectos/">
-              Ver Portafolio de Proyectos
+  <!-- About teaser -->
+  <section class="bg-[#020202] py-20" id="empresa">
+    <div class="max-w-[1280px] mx-auto px-8">
+      <ScrollReveal>
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Core Identity</span>
+          <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Diseñado para la<br />Excelencia</h2>
+          <p class="text-text-dim mt-8 max-w-[600px] mx-auto">
+            En INDUSEC fusionamos la robustez industrial con la simplicidad de uso. Cada proyecto es una pieza de ingeniería única, calibrada para ofrecer fiabilidad absoluta en entornos críticos. Conoce más sobre nuestra historia, equipo y las marcas líderes con las que trabajamos.
+          </p>
+          <div class="mt-8">
+            <a class="inline-flex items-center gap-3 px-8 py-4 rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-transparent border border-glass-border text-white hover:bg-glass hover:border-accent" href="/nosotros/">
+              Conoce más sobre nosotros <i class="fas fa-arrow-right"></i>
             </a>
           </div>
-        </ScrollReveal>
-        <ScrollReveal type="right">
-          <div class="blueprint-canvas" id="blueprint">
-            <div class="blueprint-line line-h" style="top: 25%;"></div>
-            <div class="blueprint-line line-h" style="top: 75%;"></div>
-            <div class="blueprint-line line-v" style="left: 25%;"></div>
-            <div class="blueprint-line line-v" style="left: 75%;"></div>
-            <div style="z-index: 2; text-align: center;">
-              <i class="fas fa-industry" style="font-size: 5rem; color: var(--accent); opacity: 0.4;"></i>
-              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-top: 2rem;">
-                [ PROJECT_SCHEMATIC_042 ]
-              </div>
-            </div>
-            <div style="position: absolute; top: 10%; right: 10%; width: 50px; height: 50px; border: 1px solid rgba(41,151,255,0.2);"></div>
-          </div>
-        </ScrollReveal>
-      </div>
+        </div>
+      </ScrollReveal>
     </div>
   </section>
 
   <!-- Benefits Section -->
-  <section class="section" id="por-que-elegirnos" style="background: #020202;">
-    <div class="container">
+  <section class="bg-[#020202] py-40" id="por-que-elegirnos">
+    <div class="max-w-[1280px] mx-auto px-8">
       <ScrollReveal>
-        <div class="section-header">
-          <span class="section-label">Ventajas</span>
-          <h2 class="section-title">Por Qué Elegirnos</h2>
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Ventajas</span>
+          <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Por Qué Elegirnos</h2>
         </div>
       </ScrollReveal>
       <ScrollReveal stagger>
-        <div class="services-grid">
-          <div class="service-card" style="cursor: default;">
-            <div class="service-card__icon"><i class="fas fa-award"></i></div>
-            <h3 class="service-card__title">Calidad Garantizada</h3>
-            <p class="service-card__desc">Trabajamos exclusivamente con marcas de prestigio internacional como LiftMaster, Shark, Dítec y AccessMatic. Cada equipo que instalamos cuenta con garantía de fábrica y certificación de calidad, asegurando un rendimiento óptimo y una larga vida útil en cada proyecto de automatización.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-award"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">Calidad Garantizada</h3>
+            <p class="text-text-dim text-sm">Trabajamos exclusivamente con marcas de prestigio internacional como LiftMaster, Shark, Dítec y AccessMatic. Cada equipo que instalamos cuenta con garantía de fábrica y certificación de calidad, asegurando un rendimiento óptimo y una larga vida útil en cada proyecto de automatización.</p>
           </div>
-          <div class="service-card" style="cursor: default;">
-            <div class="service-card__icon"><i class="fas fa-headset"></i></div>
-            <h3 class="service-card__title">Soporte Técnico 24/7</h3>
-            <p class="service-card__desc">Nuestro equipo de técnicos certificados está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier eventualidad. Ofrecemos mantenimiento preventivo y correctivo con repuestos originales, minimizando el tiempo de inactividad de tus sistemas de acceso.</p>
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-headset"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">Soporte Técnico 24/7</h3>
+            <p class="text-text-dim text-sm">Nuestro equipo de técnicos certificados está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier eventualidad. Ofrecemos mantenimiento preventivo y correctivo con repuestos originales, minimizando el tiempo de inactividad de tus sistemas de acceso.</p>
           </div>
-          <div class="service-card" style="cursor: default;">
-            <div class="service-card__icon"><i class="fas fa-ruler-combined"></i></div>
-            <h3 class="service-card__title">Soluciones a Medida</h3>
-            <p class="service-card__desc">Cada proyecto es único. Realizamos un diagnóstico personalizado para diseñar la solución de automatización que mejor se adapte a tus necesidades y presupuesto. Desde puertas residenciales hasta barreras vehiculares industriales, creamos sistemas eficientes y duraderos. Te acompañamos desde la asesoría inicial hasta la puesta en marcha y el mantenimiento continuo de tu sistema de automatización.</p>
+          <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500" style="cursor: default;">
+            <div class="text-4xl text-accent mb-8"><i class="fas fa-ruler-combined"></i></div>
+            <h3 class="font-display text-2xl tracking-wide mb-6 text-white">Soluciones a Medida</h3>
+            <p class="text-text-dim text-sm">Cada proyecto es único. Realizamos un diagnóstico personalizado para diseñar la solución de automatización que mejor se adapte a tus necesidades y presupuesto. Desde puertas residenciales hasta barreras vehiculares industriales, creamos sistemas eficientes y duraderos. Te acompañamos desde la asesoría inicial hasta la puesta en marcha y el mantenimiento continuo de tu sistema de automatización.</p>
           </div>
         </div>
       </ScrollReveal>
@@ -191,36 +148,21 @@ const services = [
   <!-- Stats Section -->
   <Stats />
 
-  <!-- Trust note -->
-  <section class="section" id="confianza" style="padding: 3rem 0; background: #050505;">
-    <div class="container text-center">
-      <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto;">
-        Respaldamos cada instalación con garantía de fábrica, servicio técnico especializado y atención personalizada. Nuestro compromiso es brindar soluciones de automatización que mejoren la seguridad, el confort y la eficiencia de tu hogar o empresa. Desde motores para puertas batientes y corredizas hasta barreras vehiculares de alta velocidad y sistemas biométricos, cada equipo es seleccionado cuidadosamente para cumplir con los más altos estándares de calidad y rendimiento del mercado colombiano.
-      </p>
-      <p style="color: var(--text-dim); max-width: 700px; margin: 1.5rem auto 0;">
-        Trabajamos en toda Bogotá y municipios cercanos, ofreciendo servicio de instalación, mantenimiento preventivo, reparación de emergencia y venta de repuestos originales.         Nuestro objetivo es que cada cliente reciba una solución confiable, segura y adaptada a su presupuesto, respaldada por años de experiencia en el sector de automatismos y control de acceso en Colombia. Valoramos la satisfacción de cada cliente y nos esforzamos por superar sus expectativas en cada proyecto, garantizando resultados que combinan innovación tecnológica, diseño funcional y durabilidad comprobada. Por eso cada vez más hogares y empresas en Bogotá confían en INDUSEC para la automatización de sus accesos.
-      </p>
-    </div>
-  </section>
-
   <!-- CTA Section -->
-  <section class="section" id="contacto">
-    <div class="container">
+  <section class="py-40" id="contacto">
+    <div class="max-w-[1280px] mx-auto px-8">
       <ScrollReveal type="scale">
-        <div class="cta-box">
-          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(41, 151, 255, 0.2) 0%, transparent 70%);"></div>
-          <h2>¿Listo para el próximo nivel?</h2>
-          <p>
-            Transformamos espacios ordinarios en entornos inteligentes de alta seguridad con la mejor
-            relación calidad-precio del mercado. Desde la instalación de motores para puertas automáticas
-            hasta sistemas completos de control de acceso biométrico, en INDUSEC tenemos la solución que
-            necesitas. Contáctanos hoy y recibe una cotización personalizada sin compromiso. Nuestro equipo de expertos está listo para asesorarte y brindarte la mejor solución para tu proyecto de automatización en Bogotá y toda Colombia, con calidad, seguridad y el respaldo de más de 10 años de experiencia en el sector.
+        <div class="bg-gradient-to-br from-[#0a0a0a] to-black rounded-4xl py-24 px-16 text-center border border-glass-border relative overflow-hidden">
+          <div class="absolute -top-[50px] -right-[50px] w-[200px] h-[200px] bg-[radial-gradient(circle,rgba(41,151,255,0.2)_0%,transparent_70%)]"></div>
+          <h2 class="font-display text-[clamp(2.2rem,5vw,3.5rem)] mb-6 text-white">¿Listo para el próximo nivel?</h2>
+          <p class="text-text-dim mb-12 max-w-[600px] mx-auto">
+            Transformamos espacios ordinarios en entornos inteligentes de alta seguridad con la mejor relación calidad-precio del mercado. Contáctanos hoy y recibe una cotización personalizada sin compromiso. Nuestro equipo de expertos está listo para asesorarte y brindarte la mejor solución para tu proyecto de automatización en Bogotá y toda Colombia, con calidad, seguridad y el respaldo de más de 10 años de experiencia en el sector.
           </p>
-          <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-            <a class="btn btn--primary" href="https://wa.me/573178544089" style="background: #fff; color: #000;" target="_blank">
+          <div class="flex gap-6 justify-center flex-wrap">
+            <a class="inline-flex items-center gap-3 px-8 py-4 rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-white text-black hover:-translate-y-0.5" href="https://wa.me/573178544089" target="_blank">
               Hablar con un Experto
             </a>
-            <a class="btn btn--outline" href="/productos/">
+            <a class="inline-flex items-center gap-3 px-8 py-4 rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-transparent border border-glass-border text-white hover:bg-glass hover:border-accent" href="/productos/">
               Ver Catálogo Tech
             </a>
           </div>

@@ -54,29 +54,29 @@ const services = [
 >
   <Header currentPath="/servicios/" />
 
-  <section class="section section--first" id="servicios">
-    <div class="container">
+  <section class="pt-40 pb-40" id="servicios">
+    <div class="max-w-[1280px] mx-auto px-8">
       <ScrollReveal>
-        <div class="section-header">
-          <span class="section-label">Servicios</span>
-          <h1 class="section-title">Soluciones Integrales</h1>
-          <p style="color: var(--text-dim); margin-top: 1rem;">Desde la instalación hasta el mantenimiento, garantizamos el funcionamiento óptimo de tus sistemas automáticos.</p>
+        <div class="text-center mb-20">
+          <span class="text-accent font-mono text-xs tracking-[3px] uppercase">Servicios</span>
+          <h1 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Soluciones Integrales</h1>
+          <p class="text-text-dim mt-4">Desde la instalación hasta el mantenimiento, garantizamos el funcionamiento óptimo de tus sistemas automáticos. Trabajamos con marcas líderes como LiftMaster, Shark, Dítec y AccessMatic, y nuestros técnicos certificados realizan cada intervención siguiendo las normas eléctricas colombianas vigentes. Ofrecemos asesoría técnica gratuita para ayudarte a elegir la solución adecuada para tu proyecto, ya sea residencial, comercial o industrial.</p>
         </div>
       </ScrollReveal>
 
       <ScrollReveal stagger>
-        <div class="services-grid">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map(s => (
-            <div class="service-card">
-              <div class="service-card__icon"><i class={s.icon}></i></div>
-              <h3 class="service-card__title">{s.title}</h3>
-              <p class="service-card__desc">{s.desc}</p>
+            <div class="service-card bg-glass border border-glass-border rounded-3xl p-12 relative overflow-hidden transition-all duration-500 hover:border-[rgba(41,151,255,0.3)] hover:-translate-y-1">
+              <div class="text-4xl text-accent mb-8"><i class={s.icon}></i></div>
+              <h3 class="font-display text-2xl tracking-wide mb-6 text-white">{s.title}</h3>
+              <p class="text-text-dim text-sm mb-6">{s.desc}</p>
               <div class="service-card__extra" style="max-height:200px;opacity:1;padding-top:1.5rem;margin-top:1rem;">
                 {s.specs.map(sp => (
-                  <div class="tech-spec"><span>{sp.label}</span><span>{sp.value}</span></div>
+                  <div class="flex justify-between font-mono text-xs text-status mb-2"><span>{sp.label}</span><span>{sp.value}</span></div>
                 ))}
               </div>
-              <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" style="font-size:0.7rem;color:var(--accent);margin-top:1rem;display:inline-block;text-decoration:none;">
+              <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" class="text-[0.7rem] text-accent mt-4 inline-block no-underline">
                 {s.cotizaLabel} <i class="fab fa-whatsapp"></i>
               </a>
             </div>
@@ -85,9 +85,40 @@ const services = [
       </ScrollReveal>
 
       <ScrollReveal>
-        <div class="text-center mt-60 cta-servicios">
-          <p style="color: var(--text-dim); margin-bottom: 1rem;">¿Quieres cotizar nuestros servicios?</p>
-          <a href="https://wa.me/573178544089?text=Hola,%20me%20interesan%20sus%20servicios." target="_blank" class="btn btn--primary">
+        <div class="faq-section" style="margin-top: 6rem;">
+          <div class="text-center mb-20">
+            <span class="text-accent font-mono text-xs tracking-[3px] uppercase">FAQ</span>
+            <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] mt-4 text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="max-w-[700px] mx-auto mt-12">
+            <details class="faq-item">
+              <summary class="faq-question">¿Cuánto cuesta instalar un motor para puerta batiente?</summary>
+              <div class="faq-answer">El precio varía según el tipo de motor, el peso de la puerta y la complejidad de la instalación. Ofrecemos cotización personalizada sin compromiso. Contáctanos por WhatsApp para recibir una evaluación gratuita de tu proyecto.</div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">¿Qué mantenimiento necesita una barrera vehicular?</summary>
+              <div class="faq-answer">Recomendamos mantenimiento preventivo cada 6 meses que incluye lubricación de componentes, revisión del sistema eléctrico, ajuste de sensores y verificación de la batería de respaldo. Ofrecemos planes de mantenimiento programado para evitar fallos inesperados.</div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">¿En qué zonas de Bogotá trabajan?</summary>
+              <div class="faq-answer">Realizamos instalaciones y mantenimiento en toda Bogotá y municipios cercanos como Soacha, Chía, Cajicá, Mosquera y Funza. No importa dónde estés, nuestro equipo se desplaza hasta tu ubicación.</div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">¿Ofrecen garantía en sus instalaciones?</summary>
+              <div class="faq-answer">Sí, todos nuestros trabajos incluyen garantía de fábrica en los equipos más garantía por escrito en la mano de obra. Entregamos certificación de instalación y manuales de usuario para tu tranquilidad.</div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">¿Cuánto tiempo toma una instalación típica?</summary>
+              <div class="faq-answer">Una instalación estándar de motor para puerta batiente o barrera vehicular toma entre 4 y 8 horas, dependiendo de la complejidad. Proyectos más grandes como sistemas biométricos completos pueden tomar 1 o 2 días.</div>
+            </details>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <div class="text-center mt-16">
+          <p class="text-text-dim mb-4">¿Quieres cotizar nuestros servicios?</p>
+          <a href="https://wa.me/573178544089?text=Hola,%20me%20interesan%20sus%20servicios." target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-accent text-white hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(41,151,255,0.3)]">
             <i class="fab fa-whatsapp"></i> Contáctanos
           </a>
         </div>

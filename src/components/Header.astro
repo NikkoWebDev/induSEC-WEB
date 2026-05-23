@@ -2,45 +2,48 @@
 const { currentPath } = Astro.props;
 const pages = [
   { href: '/', label: 'Inicio' },
+  { href: '/nosotros/', label: 'Sobre Nosotros' },
   { href: '/productos/', label: 'Productos' },
   { href: '/servicios/', label: 'Servicios' },
   { href: '/proyectos/', label: 'Proyectos' },
 ];
 ---
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a class="logo" href="/">
+<header class="header fixed top-0 w-full z-50 py-6 transition-all duration-500" id="header">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center justify-between">
+    <a class="flex items-center gap-3 no-underline text-white" href="/">
       <img src="/logo.png" alt="INDUSEC Logo" class="logo__img" width="52" height="52" />
-      <div class="logo__text">
-        <span class="logo__name">INDUSEC</span>
-        <span class="logo__tagline">Automatismos</span>
+      <div>
+        <span class="block font-display text-2xl font-extrabold tracking-wide leading-none">INDUSEC</span>
+        <span class="block text-[0.65rem] tracking-widest text-text-dim uppercase">Automatismos</span>
       </div>
     </a>
-    <nav class="nav">
+    <nav class="hidden lg:flex gap-10">
       {pages.map(p => (
-        <a href={p.href} class={`nav__link${currentPath === p.href ? ' active' : ''}`}>{p.label}</a>
+        <a href={p.href} class={`no-underline text-sm font-medium transition-colors duration-300 ${currentPath === p.href ? 'text-accent' : 'text-text-dim hover:text-accent'}`}>{p.label}</a>
       ))}
     </nav>
-    <div class="header__cta">
-      <a class="btn btn--primary btn--sm" href="https://wa.me/573178544089" target="_blank">
+    <div class="hidden lg:block">
+      <a class="inline-flex items-center gap-3 px-5 py-[0.7rem] rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-accent text-white hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(41,151,255,0.3)]" href="https://wa.me/573178544089" target="_blank">
         <i class="fab fa-whatsapp"></i> Hablar con Ventas
       </a>
     </div>
-    <button class="hamburger" aria-label="Menu" id="hamburger">
-      <span></span><span></span><span></span>
+    <button class="flex lg:hidden flex-col gap-1.5 cursor-pointer bg-transparent border-none" aria-label="Menu" id="hamburger">
+      <span class="block w-7 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="block w-7 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="block w-7 h-0.5 bg-white transition-all duration-300"></span>
     </button>
   </div>
 </header>
 
 <div class="mobile-menu" id="mobile-menu">
-  <nav class="mobile-menu__nav">
+  <nav class="flex flex-col gap-6">
     {pages.map(p => (
-      <a href={p.href} class="mobile-menu__link">{p.label}</a>
+      <a href={p.href} class="text-white no-underline text-2xl font-display transition-colors duration-300 hover:text-accent">{p.label}</a>
     ))}
   </nav>
-  <div class="mobile-menu__footer">
-    <a href="https://wa.me/573178544089" target="_blank" class="btn btn--whatsapp">
+  <div class="mt-8 pt-8 border-t border-glass-border">
+    <a href="https://wa.me/573178544089" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-pill font-semibold no-underline text-sm bg-[#25d366] text-white hover:-translate-y-0.5">
       <i class="fab fa-whatsapp"></i> Cotizar ahora
     </a>
   </div>
