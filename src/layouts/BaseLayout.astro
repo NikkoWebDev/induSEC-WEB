@@ -1,0 +1,73 @@
+---
+const { title, description, ogImage, canonical } = Astro.props;
+
+const siteTitle = title ? `${title} | InduSEC Automatismos` : 'InduSEC Automatismos | Vanguardia en Control de Acceso';
+const siteDesc = description || 'INDUSEC Automatismos: soluciones de automatización industrial y residencial, control de acceso y barreras vehiculares en Bogotá, Colombia.';
+const img = ogImage || '/og-default.jpg';
+const url = canonical || 'https://puertasindusec.com';
+---
+
+<!doctype html>
+<html class="scroll-smooth" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDesc} />
+    <meta name="author" content="InduSEC Automatismos" />
+    <link rel="canonical" href={url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDesc} />
+    <meta property="og:image" content={img} />
+    <meta property="og:url" content={url} />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="InduSEC Automatismos" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDesc} />
+    <meta name="twitter:image" content={img} />
+
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Sora:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://puertasindusec.com",
+      "name": "InduSEC Automatismos",
+      "description": "Soluciones de automatización industrial y residencial, control de acceso y barreras vehiculares en Bogotá.",
+      "url": "https://puertasindusec.com",
+      "telephone": "+57-317-854-4089",
+      "email": "sld.8574@gmail.com",
+      "areaServed": "Bogotá, Colombia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogotá",
+        "addressCountry": "CO"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+57-317-854-4089",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/indu.sec",
+        "https://wa.me/573178544089"
+      ]
+    })} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

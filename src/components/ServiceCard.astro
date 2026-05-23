@@ -1,0 +1,21 @@
+---
+const { icon, title, desc, specs, waText } = Astro.props;
+---
+
+<div class="service-card">
+  <div class="service-card__icon"><i class={icon}></i></div>
+  <h3 class="service-card__title">{title}</h3>
+  <p class="service-card__desc">{desc}</p>
+  {specs && (
+    <div class="service-card__extra">
+      {specs.map(s => (
+        <div class="tech-spec"><span>{s.label}</span><span>{s.value}</span></div>
+      ))}
+    </div>
+  )}
+  {waText && (
+    <a href={`https://wa.me/573178544089?text=${encodeURIComponent(waText)}`} target="_blank" style="font-size:0.7rem;color:var(--accent);margin-top:1rem;display:inline-block;text-decoration:none;">
+      COTIZAR <i class="fab fa-whatsapp"></i>
+    </a>
+  )}
+</div>

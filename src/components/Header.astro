@@ -1,0 +1,47 @@
+---
+const { currentPath } = Astro.props;
+const pages = [
+  { href: '/', label: 'Inicio' },
+  { href: '/productos/', label: 'Productos' },
+  { href: '/servicios/', label: 'Servicios' },
+  { href: '/proyectos/', label: 'Proyectos' },
+];
+---
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="logo" href="/">
+      <img src="/logo.png" alt="INDUSEC Logo" class="logo__img" width="52" height="52" />
+      <div class="logo__text">
+        <span class="logo__name">INDUSEC</span>
+        <span class="logo__tagline">Automatismos</span>
+      </div>
+    </a>
+    <nav class="nav">
+      {pages.map(p => (
+        <a href={p.href} class={`nav__link${currentPath === p.href ? ' active' : ''}`}>{p.label}</a>
+      ))}
+    </nav>
+    <div class="header__cta">
+      <a class="btn btn--primary btn--sm" href="https://wa.me/573178544089" target="_blank">
+        <i class="fab fa-whatsapp"></i> Contáctanos
+      </a>
+    </div>
+    <button class="hamburger" aria-label="Menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__nav">
+    {pages.map(p => (
+      <a href={p.href} class="mobile-menu__link">{p.label}</a>
+    ))}
+  </nav>
+  <div class="mobile-menu__footer">
+    <a href="https://wa.me/573178544089" target="_blank" class="btn btn--whatsapp">
+      <i class="fab fa-whatsapp"></i> Contáctanos
+    </a>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+---
+const stats = [
+  { value: 500, suffix: '+', label: 'Instalaciones' },
+  { value: 98, suffix: '%', label: 'Satisfacción' },
+  { value: 10, suffix: '+', label: 'Años' },
+  { value: 24, suffix: '/7', label: 'Soporte' },
+];
+---
+
+<section class="stats" id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      {stats.map(s => (
+        <div class="stat-item">
+          <div class="stat-value" data-target={s.value} data-suffix={s.suffix}>0<sup>{s.suffix}</sup></div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
+
+const services = [
+  {
+    icon: 'fas fa-tools',
+    title: 'Instalación y Puesta en Marcha',
+    desc: 'Instalamos motores para puertas batientes, corredizas, barreras vehiculares y todo tipo de automatismos con garantía de fábrica y mano de obra calificada.',
+    specs: [
+      { label: 'Puertas batientes', value: '✓' },
+      { label: 'Portones corredizos', value: '✓' },
+      { label: 'Barreras vehiculares', value: '✓' },
+      { label: 'Garantía incluida', value: '✓' },
+    ],
+    waText: 'Quiero cotizar instalación de automatismos',
+  },
+  {
+    icon: 'fas fa-wrench',
+    title: 'Mantenimiento y Reparación',
+    desc: 'Planes de mantenimiento preventivo para prolongar la vida útil de tus equipos. Servicio de reparación rápido y efectivo.',
+    specs: [
+      { label: 'Mantenimiento preventivo', value: '✓' },
+      { label: 'Reparación express', value: '✓' },
+      { label: 'Diagnóstico técnico', value: '✓' },
+      { label: 'Repuestos originales', value: '✓' },
+    ],
+    waText: 'Quiero información sobre mantenimiento',
+  },
+  {
+    icon: 'fas fa-fingerprint',
+    title: 'Sistemas de Control de Acceso',
+    desc: 'Implementación de control de accesos biométrico, por tarjeta de proximidad, teclado y sistemas inteligentes para gestionar el flujo de personas y vehículos.',
+    specs: [
+      { label: 'Control biométrico', value: '✓' },
+      { label: 'Tarjetas RFID', value: '✓' },
+      { label: 'Teclados codificados', value: '✓' },
+      { label: 'Software de gestión', value: '✓' },
+    ],
+    waText: 'Quiero información sobre control de acceso',
+  },
+];
+---
+
+<BaseLayout
+  title="Servicios"
+  description="Servicios de instalación, mantenimiento y reparación de puertas automáticas, control de acceso y barreras vehiculares por INDUSEC en Bogotá."
+  canonical="https://puertasindusec.com/servicios/"
+>
+  <Header currentPath="/servicios/" />
+
+  <section class="section section--first" id="servicios">
+    <div class="container">
+      <ScrollReveal>
+        <div class="section-header">
+          <span class="section-label">Servicios</span>
+          <h1 class="section-title">Soluciones Integrales</h1>
+          <p style="color: var(--text-dim); margin-top: 1rem;">Desde la instalación hasta el mantenimiento, garantizamos el funcionamiento óptimo de tus sistemas automáticos.</p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal stagger>
+        <div class="services-grid">
+          {services.map(s => (
+            <div class="service-card">
+              <div class="service-card__icon"><i class={s.icon}></i></div>
+              <h3 class="service-card__title">{s.title}</h3>
+              <p class="service-card__desc">{s.desc}</p>
+              <div class="service-card__extra" style="max-height:200px;opacity:1;padding-top:1.5rem;margin-top:1rem;">
+                {s.specs.map(sp => (
+                  <div class="tech-spec"><span>{sp.label}</span><span>{sp.value}</span></div>
+                ))}
+              </div>
+              <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" style="font-size:0.7rem;color:var(--accent);margin-top:1rem;display:inline-block;text-decoration:none;">
+                COTIZAR <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          ))}
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <div class="text-center mt-60 cta-servicios">
+          <p style="color: var(--text-dim); margin-bottom: 1rem;">¿Quieres cotizar nuestros servicios?</p>
+          <a href="https://wa.me/573178544089?text=Hola,%20me%20interesan%20sus%20servicios." target="_blank" class="btn btn--primary">
+            <i class="fab fa-whatsapp"></i> Contáctanos
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <Footer />
+  <script src="/src/scripts/main.js"></script>
+</BaseLayout>

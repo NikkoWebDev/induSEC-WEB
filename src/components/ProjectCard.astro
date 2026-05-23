@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+const { image, imageAlt, overlay, title, desc, specs, waText } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-card__img">
+    {image && <Image src={image} alt={imageAlt || title} />}
+    {overlay && <div class="project-card__overlay">{overlay}</div>}
+  </div>
+  <div class="project-card__body">
+    <h3 class="project-card__title">{title}</h3>
+    <p class="project-card__desc">{desc}</p>
+    {specs && (
+      <div class="project-card__specs">
+        {specs.map(s => (
+          <div class="spec-item">
+            <span class="spec-label">{s.label}</span>
+            <span class="spec-value">{s.value}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+  <div class="project-card__footer">
+    <a href={`https://wa.me/573178544089?text=${encodeURIComponent(waText || `Información sobre ${title}`)}`} target="_blank" class="btn btn--outline btn--sm">
+      <i class="fab fa-whatsapp"></i> Consultar
+    </a>
+  </div>
+</div>

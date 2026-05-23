@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
+import Stats from '../components/Stats.astro';
+
+const services = [
+  {
+    icon: 'fas fa-cogs',
+    title: 'Automatismos',
+    desc: 'Sistemas de propulsión inteligente para accesos de alto tráfico, diseñados para durar.',
+    specs: [
+      { label: 'TORQUE', value: '350Nm' },
+      { label: 'SPEED', value: '12m/min' },
+      { label: 'DUTY CYCLE', value: '100%' },
+    ],
+    waText: 'Quiero información sobre automatismos para puertas',
+  },
+  {
+    icon: 'fas fa-microchip',
+    title: 'Control Acceso',
+    desc: 'Seguridad biométrica de grado empresarial integrada en su flujo de trabajo diario.',
+    specs: [
+      { label: 'AUTH', value: 'BIO / RFID' },
+      { label: 'STORAGE', value: '50K USERS' },
+      { label: 'INTERFACE', value: 'TCP/IP PoE' },
+    ],
+    waText: 'Quiero información sobre control de acceso',
+  },
+  {
+    icon: 'fas fa-road-barrier',
+    title: 'Flujo Vehicular',
+    desc: 'Gestión inteligente de tráfico con barreras de alta velocidad y sensores láser.',
+    specs: [
+      { label: 'OPEN TIME', value: '1.5s' },
+      { label: 'ARM LENGTH', value: '6m MAX' },
+      { label: 'ALGORITHM', value: 'LPR READY' },
+    ],
+    waText: 'Quiero información sobre barreras vehiculares',
+  },
+];
+---
+
+<BaseLayout canonical="https://puertasindusec.com">
+  <Header currentPath="/" />
+  <Hero />
+  <script>
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+      });
+      card.addEventListener('click', () => card.classList.toggle('active'));
+    });
+  </script>
+
+  <!-- Services Section -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <ScrollReveal>
+        <div class="section-header">
+          <span class="section-label">Engineering Modules</span>
+          <h2 class="section-title">Servicios de Vanguardia</h2>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal stagger>
+        <div class="services-grid">
+          {services.map(s => (
+            <div class="service-card" data-reveal>
+              <div class="service-card__icon"><i class={s.icon}></i></div>
+              <h3 class="service-card__title">{s.title}</h3>
+              <p class="service-card__desc">{s.desc}</p>
+              <div class="service-card__extra">
+                {s.specs.map(sp => (
+                  <div class="tech-spec"><span>{sp.label}</span><span>{sp.value}</span></div>
+                ))}
+              </div>
+              <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" style="font-size:0.7rem;color:var(--accent);margin-top:1rem;display:inline-block;text-decoration:none;">
+                COTIZAR <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          ))}
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="empresa" style="background: #020202;">
+    <div class="container">
+      <div class="about-grid">
+        <ScrollReveal type="left">
+          <div class="about-text">
+            <span class="section-label">Core Identity</span>
+            <h2 class="section-title">Diseñado para la<br />Excelencia</h2>
+            <p style="color: var(--text-dim); margin-top: 2rem;">
+              En INDUSEC, fusionamos la robustez industrial con la simplicidad de uso. Cada proyecto es
+              una pieza de ingeniería única, calibrada para ofrecer fiabilidad absoluta en entornos críticos.
+            </p>
+            <div class="about__feat-list">
+              <div class="feat-item">
+                <i class="fas fa-shield-halved"></i>
+                <div>
+                  <span class="feat-title">Mejores Equipos</span>
+                  <span class="feat-desc">Solo marcas líderes mundiales.</span>
+                </div>
+              </div>
+              <div class="feat-item">
+                <i class="fas fa-user-gear"></i>
+                <div>
+                  <span class="feat-title">Soporte Elite</span>
+                  <span class="feat-desc">Respuesta técnica inmediata 24/7.</span>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn--outline" href="/proyectos/">
+              Ver Portafolio de Proyectos
+            </a>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal type="right">
+          <div class="blueprint-canvas" id="blueprint">
+            <div class="blueprint-line line-h" style="top: 25%;"></div>
+            <div class="blueprint-line line-h" style="top: 75%;"></div>
+            <div class="blueprint-line line-v" style="left: 25%;"></div>
+            <div class="blueprint-line line-v" style="left: 75%;"></div>
+            <div style="z-index: 2; text-align: center;">
+              <i class="fas fa-industry" style="font-size: 5rem; color: var(--accent); opacity: 0.4;"></i>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-top: 2rem;">
+                [ PROJECT_SCHEMATIC_042 ]
+              </div>
+            </div>
+            <div style="position: absolute; top: 10%; right: 10%; width: 50px; height: 50px; border: 1px solid rgba(41,151,255,0.2);"></div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <Stats />
+
+  <!-- CTA Section -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <ScrollReveal type="scale">
+        <div class="cta-box">
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(41, 151, 255, 0.2) 0%, transparent 70%);"></div>
+          <h2>¿Listo para el próximo nivel?</h2>
+          <p>
+            Transformamos espacios ordinarios en entornos inteligentes de alta seguridad con la mejor
+            relación calidad-precio del mercado.
+          </p>
+          <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+            <a class="btn btn--primary" href="https://wa.me/573178544089" style="background: #fff; color: #000;" target="_blank">
+              Hablar con un Experto
+            </a>
+            <a class="btn btn--outline" href="/productos/">
+              Ver Catálogo Tech
+            </a>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <Footer />
+  <script src="/src/scripts/main.js"></script>
+</BaseLayout>

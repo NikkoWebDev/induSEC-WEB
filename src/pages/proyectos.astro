@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
+import { Image } from 'astro:assets';
+
+import p3 from '../assets/images/proyecto_3.webp';
+import p4 from '../assets/images/proyecto_4.webp';
+import p5 from '../assets/images/proyecto_5.webp';
+import p6 from '../assets/images/proyecto_6.webp';
+import p7 from '../assets/images/proyecto_7.webp';
+import p8 from '../assets/images/proyecto_8.webp';
+import p9 from '../assets/images/proyecto_9.webp';
+import p11 from '../assets/images/proyecto_11.webp';
+
+const projects = [
+  {
+    image: p3,
+    imageAlt: 'Motor de garaje Shark 1000 instalado',
+    overlay: 'Automatismo de Garaje',
+    title: 'Motor Shark 1000 para Garaje',
+    desc: 'Instalación de motor de techo Shark 1000 para puerta de garaje. Sistema silencioso con apertura rápida y luz LED integrada.',
+    specs: [
+      { label: 'Equipo', value: 'Shark 1000' },
+      { label: 'Tipo', value: 'Garaje' },
+    ],
+    waText: 'Información sobre motor Shark 1000 para garaje',
+  },
+  {
+    image: p4,
+    imageAlt: 'Portón metálico con paneles de madera',
+    overlay: 'Puertas Residenciales',
+    title: 'Portón Metálico con Acabado en Madera',
+    desc: 'Fabricación e instalación de portón batiente y puerta peatonal en estructura metálica con paneles de madera natural.',
+    specs: [
+      { label: 'Material', value: 'Metal + Madera' },
+      { label: 'Tipo', value: 'Batiente' },
+    ],
+    waText: 'Información sobre portones con acabado en madera',
+  },
+  {
+    image: p5,
+    imageAlt: 'Construcción de estructura para garaje',
+    overlay: 'Obra Civil',
+    title: 'Construcción de Estructura para Garaje',
+    desc: 'Obra de construcción de estructura metálica con cubierta para garaje residencial, preparada para automatización posterior.',
+    specs: [
+      { label: 'Ubicación', value: 'Residencial' },
+      { label: 'Tipo', value: 'Estructura' },
+    ],
+    waText: 'Información sobre construcción de garajes',
+  },
+  {
+    image: p6,
+    imageAlt: 'Puerta de seguridad con cerradura multipunto',
+    overlay: 'Seguridad',
+    title: 'Puerta de Seguridad Multipunto',
+    desc: 'Instalación de puerta de seguridad interior con acabado en madera y sistema de cerradura multipunto de alta resistencia.',
+    specs: [
+      { label: 'Cerradura', value: 'Multipunto' },
+      { label: 'Tipo', value: 'Seguridad' },
+    ],
+    waText: 'Información sobre puertas de seguridad',
+  },
+  {
+    image: p7,
+    imageAlt: 'Barrera vehicular Dítec QIK',
+    overlay: 'Barrera Vehicular',
+    title: 'Barrera Vehicular Dítec QIK',
+    desc: 'Barrera vehicular profesional Dítec QIK de alta velocidad con iluminación LED integrada. Ideal para parkings y conjuntos.',
+    specs: [
+      { label: 'Marca', value: 'Dítec' },
+      { label: 'Tipo', value: 'QIK Pro' },
+    ],
+    waText: 'Información sobre barreras vehiculares Dítec',
+  },
+  {
+    image: p8,
+    imageAlt: 'Motor industrial AccessMatic',
+    overlay: 'Motor Industrial',
+    title: 'Motor Industrial AccessMatic',
+    desc: 'Motor de cortina enrollable AccessMatic con sistema de engranajes de alta resistencia para uso industrial pesado.',
+    specs: [
+      { label: 'Marca', value: 'AccessMatic' },
+      { label: 'Tipo', value: 'Cortina Enrollable' },
+    ],
+    waText: 'Información sobre motores industriales AccessMatic',
+  },
+  {
+    image: p9,
+    imageAlt: 'Control remoto LiftMaster 891LM',
+    overlay: 'Control Remoto',
+    title: 'Control Remoto LiftMaster 891LM',
+    desc: 'Control remoto de un botón LiftMaster 891LM con tecnología Security+ 2.0 y frecuencia rolling code para máxima seguridad.',
+    specs: [
+      { label: 'Marca', value: 'LiftMaster' },
+      { label: 'Modelo', value: '891LM' },
+    ],
+    waText: 'Información sobre controles LiftMaster',
+  },
+  {
+    image: p11,
+    imageAlt: 'Puerta batiente automatizada en conjunto residencial',
+    overlay: 'Automatismo Residencial',
+    title: 'Automatización de Puerta Batiente',
+    desc: 'Instalación de motor para puerta batiente metálica en conjunto residencial. Sistema con brazo electromecánico de alta durabilidad.',
+    specs: [
+      { label: 'Ubicación', value: 'Conjunto' },
+      { label: 'Tipo', value: 'Batiente' },
+    ],
+    waText: 'Información sobre automatización de puertas batientes',
+  },
+];
+---
+
+<BaseLayout
+  title="Proyectos"
+  description="Portafolio de proyectos de automatización, puertas automáticas y control de acceso realizados por INDUSEC en Bogotá."
+  canonical="https://puertasindusec.com/proyectos/"
+>
+  <Header currentPath="/proyectos/" />
+
+  <section class="section section--first" id="proyectos">
+    <div class="container">
+      <ScrollReveal>
+        <div class="section-header">
+          <span class="section-label">Portafolio</span>
+          <h1 class="section-title">Nuestros Proyectos</h1>
+          <p style="color: var(--text-dim); margin-top: 1rem;">Soluciones de automatización implementadas en residencias, empresas y espacios industriales en Bogotá.</p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal stagger>
+        <div class="projects-grid">
+          {projects.map(p => (
+            <div class="project-card">
+              <div class="project-card__img">
+                <Image src={p.image} alt={p.imageAlt} />
+                <div class="project-card__overlay">{p.overlay}</div>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">{p.title}</h3>
+                <p class="project-card__desc">{p.desc}</p>
+                <div class="project-card__specs">
+                  {p.specs.map(s => (
+                    <div class="spec-item">
+                      <span class="spec-label">{s.label}</span>
+                      <span class="spec-value">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div class="project-card__footer">
+                <a href={`https://wa.me/573178544089?text=${encodeURIComponent(p.waText)}`} target="_blank" class="btn btn--outline btn--sm">
+                  <i class="fab fa-whatsapp"></i> Consultar
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <div class="text-center mt-60 cta-servicios">
+          <p style="color: var(--text-dim); margin-bottom: 1rem;">¿Tienes un proyecto en mente?</p>
+          <a href="https://wa.me/573178544089?text=Hola,%20me%20gustaría%20cotizar%20un%20proyecto." target="_blank" class="btn btn--primary">
+            <i class="fab fa-whatsapp"></i> Cotizar Proyecto
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <Footer />
+  <script src="/src/scripts/main.js"></script>
+</BaseLayout>

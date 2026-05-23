@@ -1,0 +1,8 @@
+---
+const { type = 'fade', stagger = false, class: className = '' } = Astro.props;
+const baseClass = stagger ? 'reveal-stagger' : `reveal${type === 'left' ? ' reveal--left' : type === 'right' ? ' reveal--right' : type === 'scale' ? ' reveal--scale' : ''}`;
+---
+
+<div class={`${baseClass}${className ? ' ' + className : ''}`}>
+  <slot />
+</div>

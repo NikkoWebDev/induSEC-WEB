@@ -1,0 +1,15 @@
+---
+const { icon, title, desc, tag, tagClass = 'tag--blue', waText } = Astro.props;
+---
+
+<div class="product-card">
+  <div class="product-card__img"><i class={icon}></i></div>
+  <div class="product-card__body">
+    <h3 class="product-card__title">{title}</h3>
+    <p class="product-card__desc">{desc}</p>
+  </div>
+  <div class="product-card__footer">
+    <span class={`tag ${tagClass}`}>{tag}</span>
+    <a href={`https://wa.me/573178544089?text=${encodeURIComponent(waText || `Información sobre ${title}`)}`} target="_blank" class="btn btn--outline btn--sm"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
