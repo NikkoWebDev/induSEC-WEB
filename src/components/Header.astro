@@ -2,7 +2,6 @@
 const { currentPath } = Astro.props;
 const pages = [
   { href: '/', label: 'Inicio' },
-  { href: '/nosotros/', label: 'Sobre Nosotros' },
   { href: '/productos/', label: 'Productos' },
   { href: '/servicios/', label: 'Servicios' },
   { href: '/proyectos/', label: 'Proyectos' },
@@ -23,7 +22,8 @@ const pages = [
         <a href={p.href} class={`no-underline text-sm font-medium transition-colors duration-300 ${currentPath === p.href ? 'text-accent' : 'text-text-dim hover:text-accent'}`}>{p.label}</a>
       ))}
     </nav>
-    <div class="hidden lg:block">
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="/nosotros/" class={`no-underline text-sm font-medium transition-colors duration-300 ${currentPath === '/nosotros/' ? 'text-accent' : 'text-text-dim hover:text-accent'}`}>Sobre Nosotros</a>
       <a class="inline-flex items-center gap-3 px-5 py-[0.7rem] rounded-pill font-semibold no-underline text-sm transition-all duration-300 bg-accent text-white hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(41,151,255,0.3)]" href="https://wa.me/573178544089" target="_blank">
         <i class="fab fa-whatsapp"></i> Hablar con Ventas
       </a>
