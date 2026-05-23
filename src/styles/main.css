@@ -885,6 +885,20 @@ html { scroll-behavior: smooth; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 480px) {
+  .hero__title { font-size: 2.5rem; }
+  .section-title { font-size: 2rem; }
+  .hero__desc { font-size: 1rem; }
+  .btn { font-size: 0.85rem; padding: 0.8rem 1.5rem; }
+  .cta-box { padding: 3rem 1.5rem; }
+  .cta-box h2 { font-size: 2.2rem; }
+  .service-card { padding: 2rem; }
+  .hero__label { font-size: 0.65rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-value { font-size: 3rem; }
+  .section--first { padding-top: 110px; }
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
