@@ -4,7 +4,7 @@ import '../styles/main.css';
 const { title, description, ogImage, canonical } = Astro.props;
 
 const siteTitle = title ? `${title} | InduSEC Automatismos` : 'InduSEC Automatismos | Vanguardia en Control de Acceso';
-const siteDesc = description || 'INDUSEC Automatismos: soluciones de automatización industrial y residencial, control de acceso y barreras vehiculares en Bogotá, Colombia.';
+const siteDesc = description || 'INDUSEC Automatismos: automatización industrial y residencial, control de acceso y barreras vehiculares en Bogotá, Colombia.';
 const img = ogImage || '/og-default.jpg';
 const url = canonical || 'https://puertasindusec.com';
 ---
@@ -35,6 +35,11 @@ const url = canonical || 'https://puertasindusec.com';
     <meta name="theme-color" content="#000000" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
 
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Sora:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet" />
@@ -63,6 +68,8 @@ const url = canonical || 'https://puertasindusec.com';
       },
       "sameAs": [
         "https://www.instagram.com/indu.sec",
+        "https://web.facebook.com/automatizmosindusec/",
+        "https://www.tiktok.com/@indusec3",
         "https://wa.me/573178544089"
       ]
     })} />

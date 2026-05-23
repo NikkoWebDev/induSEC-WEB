@@ -17,6 +17,7 @@ const services = [
       { label: 'DUTY CYCLE', value: '100%' },
     ],
     waText: 'Quiero información sobre automatismos para puertas',
+    cotizaLabel: 'Cotizar Automatismos',
   },
   {
     icon: 'fas fa-microchip',
@@ -28,6 +29,7 @@ const services = [
       { label: 'INTERFACE', value: 'TCP/IP PoE' },
     ],
     waText: 'Quiero información sobre control de acceso',
+    cotizaLabel: 'Cotizar Control de Acceso',
   },
   {
     icon: 'fas fa-road-barrier',
@@ -39,6 +41,7 @@ const services = [
       { label: 'ALGORITHM', value: 'LPR READY' },
     ],
     waText: 'Quiero información sobre barreras vehiculares',
+    cotizaLabel: 'Cotizar Barreras',
   },
 ];
 ---
@@ -64,6 +67,9 @@ const services = [
         <div class="section-header">
           <span class="section-label">Engineering Modules</span>
           <h2 class="section-title">Servicios de Vanguardia</h2>
+          <p style="color: var(--text-dim); margin-top: 1.5rem; max-width: 700px; margin-inline: auto;">
+            Con más de 10 años de experiencia en automatización industrial y residencial, en INDUSEC trabajamos con marcas líderes como LiftMaster, Shark, Dítec y AccessMatic. Cada proyecto se diseña a la medida de las necesidades del cliente, garantizando equipos de alta calidad, instalación profesional y soporte técnico continuo en Bogotá y toda Colombia. Ofrecemos soluciones para hogares, conjuntos residenciales, parqueaderos públicos y plantas industriales que requieren automatización de accesos con la máxima seguridad y durabilidad.
+          </p>
         </div>
       </ScrollReveal>
       <ScrollReveal stagger>
@@ -79,7 +85,7 @@ const services = [
                 ))}
               </div>
               <a href={`https://wa.me/573178544089?text=${encodeURIComponent(s.waText)}`} target="_blank" style="font-size:0.7rem;color:var(--accent);margin-top:1rem;display:inline-block;text-decoration:none;">
-                COTIZAR <i class="fab fa-whatsapp"></i>
+                {s.cotizaLabel} <i class="fab fa-whatsapp"></i>
               </a>
             </div>
           ))}
@@ -99,6 +105,9 @@ const services = [
             <p style="color: var(--text-dim); margin-top: 2rem;">
               En INDUSEC, fusionamos la robustez industrial con la simplicidad de uso. Cada proyecto es
               una pieza de ingeniería única, calibrada para ofrecer fiabilidad absoluta en entornos críticos.
+              Nuestro equipo técnico certificado brinda soporte 24/7 para mantenimiento preventivo y correctivo,
+              asegurando que tus sistemas de automatización, control de acceso y barreras vehiculares funcionen
+              sin interrupciones en hogares, conjuntos residenciales y empresas industriales en Bogotá.
             </p>
             <div class="about__feat-list">
               <div class="feat-item">
@@ -143,6 +152,15 @@ const services = [
   <!-- Stats Section -->
   <Stats />
 
+  <!-- Trust note -->
+  <section class="section" id="confianza" style="padding: 3rem 0; background: #050505;">
+    <div class="container text-center">
+      <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto;">
+        Respaldamos cada instalación con garantía de fábrica, servicio técnico especializado y atención personalizada. Nuestro compromiso es brindar soluciones de automatización que mejoren la seguridad, el confort y la eficiencia de tu hogar o empresa. Desde motores para puertas batientes y corredizas hasta barreras vehiculares de alta velocidad y sistemas biométricos, cada equipo es seleccionado cuidadosamente para cumplir con los más altos estándares de calidad y rendimiento.
+      </p>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="section" id="contacto">
     <div class="container">
@@ -152,7 +170,9 @@ const services = [
           <h2>¿Listo para el próximo nivel?</h2>
           <p>
             Transformamos espacios ordinarios en entornos inteligentes de alta seguridad con la mejor
-            relación calidad-precio del mercado.
+            relación calidad-precio del mercado. Desde la instalación de motores para puertas automáticas
+            hasta sistemas completos de control de acceso biométrico, en INDUSEC tenemos la solución que
+            necesitas. Contáctanos hoy y recibe una cotización personalizada sin compromiso.
           </p>
           <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
             <a class="btn btn--primary" href="https://wa.me/573178544089" style="background: #fff; color: #000;" target="_blank">
